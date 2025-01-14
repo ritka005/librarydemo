@@ -21,68 +21,68 @@ public class Book {
     private Set<BookAuthor> bookAuthors;
 
     // Геттеры и сеттеры
-    public Long getIdBook() {
-        return idbook;
-    }
-
-    public void setIdBook(Long idBook) {
-        this.idbook = idBook;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getYearOfPublication() {
-        return yearofpublication;
-    }
-
-    public void setYearOfPublication(Integer yearofpublication) {
-        this.yearofpublication = yearofpublication;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public Integer getNumberOfCopies() {
-        return numberofcopies;
-    }
-
-    public void setNumberOfCopies(Integer numberofcopies) {
-        this.numberofcopies = numberofcopies;
-    }
-
-    public Boolean getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(Boolean availability) {
-        this.availability = availability;
-    }
-
-    public Set<BookAuthor> getBookAuthors() {
-        return bookAuthors;
-    }
-
-    public void setBookAuthors(Set<BookAuthor> bookAuthors) {
-        this.bookAuthors = bookAuthors;
-    }
+//    public Long getIdBook() {
+//        return idbook;
+//    }
+//
+//    public void setIdBook(Long idBook) {
+//        this.idbook = idBook;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public Integer getYearOfPublication() {
+//        return yearofpublication;
+//    }
+//
+//    public void setYearOfPublication(Integer yearofpublication) {
+//        this.yearofpublication = yearofpublication;
+//    }
+//
+//    public String getPublisher() {
+//        return publisher;
+//    }
+//
+//    public void setPublisher(String publisher) {
+//        this.publisher = publisher;
+//    }
+//
+//    public String getGenre() {
+//        return genre;
+//    }
+//
+//    public void setGenre(String genre) {
+//        this.genre = genre;
+//    }
+//
+//    public Integer getNumberOfCopies() {
+//        return numberofcopies;
+//    }
+//
+//    public void setNumberOfCopies(Integer numberofcopies) {
+//        this.numberofcopies = numberofcopies;
+//    }
+//
+//    public Boolean getAvailability() {
+//        return availability;
+//    }
+//
+//    public void setAvailability(Boolean availability) {
+//        this.availability = availability;
+//    }
+//
+//    public Set<BookAuthor> getBookAuthors() {
+//        return bookAuthors;
+//    }
+//
+//    public void setBookAuthors(Set<BookAuthor> bookAuthors) {
+//        this.bookAuthors = bookAuthors;
+//    }
 }
 

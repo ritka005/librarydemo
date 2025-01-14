@@ -1,45 +1,33 @@
-
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="UTF-8">
-  <title>Add Book</title>
-</head>
-<body>
-<h1>Add Book</h1>
-<form action="/books/add" method="post">
-  <label>Name:</label><br>
+<!DOCTYPE html><html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>  <meta charset="UTF-8">
+  <title>Добавить книгу</title></head>
+<body><h1>Добавить книгу</h1>
+<form action="/books/add" method="post">  <label>Название:</label><br>
   <input type="text" name="name" required><br>
-
-  <label>Year of Publication:</label><br>
-  <input type="number" name="yearOfPublication" required><br>
-
-  <label>Publisher:</label><br>
+  <label>Год издания:</label><br>  <input type="number" name="yearOfPublication" required><br>
+  <label>Издатель:</label><br>
   <input type="text" name="publisher" required><br>
-
-  <label>Genre:</label><br>
-  <input type="text" name="genre" required><br>
-
-  <label>Number of Copies:</label><br>
+  <label>Жанр:</label><br>  <input type="text" name="genre" required><br>
+  <label>Кол-во копий:</label><br>
   <input type="number" name="numberOfCopies" required><br>
-
-  <label>Availability:</label><br>
-  <select name="availability">
-    <option value="true">Available</option>
-    <option value="false">Not Available</option>
+  <label>Наличие:</label><br>  <select name="availability">
+    <option value="true">Есть</option>    <option value="false">Нет</option>
   </select><br>
-
-  <label>Authors:</label><br>
-  <select name="authors" multiple>
-    <!-- Здесь добавьте список авторов, который можно будет выбрать -->
-    <option value="1">Author 1</option>
-    <option value="2">Author 2</option>
-    <option value="3">Author 3</option>
-    <!-- Динамически создавайте авторов из базы данных при помощи Thymeleaf или другого шаблонизатора -->
-  </select><br>
-
-  <input type="submit" value="Add Book">
+  <input type="submit" value="Добавить книгу">
 </form>
-<a href="/books">Back</a>
-</body>
-</html>
+
+
+<h1>Список Книг</h1>
+<table>  <thead>
+<tr>    <th>ID</th>
+  <th>Название</th>    <th>Издатель</th>
+  <th>Жанр</th>    <th>Наличие</th> </tr>
+</thead>  <tbody>
+<tr th:each="book : ${books}">    <td th:text="${book.idBook}"></td>
+  <td th:text="${book.name}"></td>
+  <td th:text="${book.publisher}"></td>
+  <td th:text="${book.genre}"></td>
+  <td th:text="${book.availability}"></td>
+</tr>
+</tbody></table>
+</body></html>
