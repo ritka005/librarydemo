@@ -1,0 +1,36 @@
+
+<!-- addBook.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить книгу</title>
+</head>
+<body>
+<h1>Добавить книгу</h1>
+<form action="/addBook" method="POST">
+  <label for="name">Имя:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="year">Год издания:</label>
+  <input type="number" id="year" name="year" required>
+
+  <label for="publisher">Издатель:</label>
+  <input type="text" id="publisher" name="publisher" required>
+
+  <label for="genre">Жанр:</label>
+  <input type="text" id="genre" name="genre" required>
+
+  <label for="copies">Количество копий:</label>
+  <input type="number" id="copies" name="copies" required>
+
+  <label for="availability">Доступность:</label>
+  <select id="availability" name="availability" required>
+    <option value="true">Доступна</option>
+    <option value="false">Недоступна</option>
+  </select>
+
+  <input type="submit" value="Добавить Книгу">
+</form>
+</body>
+</html>

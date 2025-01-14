@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Book</title>
+</head>
+<body>
+<h1>Add Book</h1>
+<form action="/books/add" method="post">
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br>
+
+  <label>Year of Publication:</label><br>
+  <input type="number" name="yearOfPublication" required><br>
+
+  <label>Publisher:</label><br>
+  <input type="text" name="publisher" required><br>
+
+  <label>Genre:</label><br>
+  <input type="text" name="genre" required><br>
+
+  <label>Number of Copies:</label><br>
+  <input type="number" name="numberOfCopies" required><br>
+
+  <label>Availability:</label><br>
+  <select name="availability">
+    <option value="true">Available</option>
+    <option value="false">Not Available</option>
+  </select><br>
+
+  <label>Authors:</label><br>
+  <select name="authors" multiple>
+    <!-- Здесь добавьте список авторов, который можно будет выбрать -->
+    <option value="1">Author 1</option>
+    <option value="2">Author 2</option>
+    <option value="3">Author 3</option>
+    <!-- Динамически создавайте авторов из базы данных при помощи Thymeleaf или другого шаблонизатора -->
+  </select><br>
+
+  <input type="submit" value="Add Book">
+</form>
+<a href="/books">Back</a>
+</body>
+</html>

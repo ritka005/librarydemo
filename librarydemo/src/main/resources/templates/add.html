@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавить книгу</title>
+</head>
+<body>
+<h1>Добавить книгу</h1>
+<form action="/books/add" method="post">
+  <label>Название:</label><input type="text" name="name"><br>
+  <label>Год публикации:</label><input type="number" name="yearOfPublication"><br>
+  <label>Издатель:</label><input type="text" name="publisher"><br>
+  <label>Жанр:</label><input type="text" name="genre"><br>
+  <input type="submit" value="Сохранить">
+</form>
+<a href="/books">Назад</a>
+</body>
+</html>
