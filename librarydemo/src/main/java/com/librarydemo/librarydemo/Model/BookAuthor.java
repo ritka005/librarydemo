@@ -4,29 +4,20 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "BookAuthor")
-
 public class BookAuthor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "book_author_seq", sequenceName = "book_author_sequence", allocationSize = 1)
-    private Long idbookauthor;
+
+    @EmbeddedId
+    private BookAuthorId id;
 
     @ManyToOne
-    @JoinColumn(name = "idBook")
+    @MapsId("bookId")
+    @JoinColumn(name = "idBook", nullable = false)
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "idAuthor")
+    @MapsId("authorId")
+    @JoinColumn(name = "idAuthor", nullable = false)
     private Author author;
 
-    // Геттеры и сеттеры
-    public Long getIdBookAuthor() {
-        return idbookauthor;
-    }
-
-    public void setIdBookAuthor(Long idBookAuthor) {
-        this.idbookauthor = idBookAuthor;
-    }
-
-    // Остальные геттеры и сеттеры
+    // Геттеры и сеттеры (если нужно)
 }

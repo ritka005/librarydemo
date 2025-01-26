@@ -1,9 +1,7 @@
 package com.librarydemo.librarydemo.Service;
 
 import com.librarydemo.librarydemo.Model.Book;
-import com.librarydemo.librarydemo.Model.Author;
 import com.librarydemo.librarydemo.Repository.BookRepository;
-import com.librarydemo.librarydemo.Repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -11,11 +9,9 @@ import java.util.Optional;
 
 @Service
 public class LibraryService {
-    @Autowired
-    private BookRepository bookRepository;
 
     @Autowired
-    private AuthorRepository authorRepository;
+    private BookRepository bookRepository;
 
     public List<Book> findAllBooks() {
         return bookRepository.findAll();

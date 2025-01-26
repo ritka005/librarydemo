@@ -1,33 +1,145 @@
-<!DOCTYPE html><html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>  <meta charset="UTF-8">
-  <title>Добавить книгу</title></head>
-<body><h1>Добавить книгу</h1>
-<form action="/books/add" method="post">  <label>Название:</label><br>
-  <input type="text" name="name" required><br>
-  <label>Год издания:</label><br>  <input type="number" name="yearOfPublication" required><br>
-  <label>Издатель:</label><br>
-  <input type="text" name="publisher" required><br>
-  <label>Жанр:</label><br>  <input type="text" name="genre" required><br>
-  <label>Кол-во копий:</label><br>
-  <input type="number" name="numberOfCopies" required><br>
-  <label>Наличие:</label><br>  <select name="availability">
-    <option value="true">Есть</option>    <option value="false">Нет</option>
-  </select><br>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавить книгу</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    input[type="submit"] {
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #4cae4c;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<h1>Добавить книгу</h1>
+
+<form action="/authors/add" method="post">
+
+  <label>ФИО автора:</label>
+  <input type="text" name="fullName" required>
+
+  <label>Дата рождения:</label>
+  <input type="date" name="dateOfBirth" required>
+
+  <label>Биография:</label>
+  <input type="text" name="biography" required>
+</form>
+
+<form action="/books/add" method="post">
+
+  <label>Название:</label>
+  <input type="text" name="name" required>
+
+  <label>Год издания:</label>
+  <input type="number" name="yearOfPublication" required>
+
+  <label>Издатель:</label>
+  <input type="text" name="publisher" required>
+
+  <label>Жанр:</label>
+  <input type="text" name="genre" required>
+
+  <label>Кол-во копий:</label>
+  <input type="number" name="numberOfCopies" required>
+
+  <label>Наличие:</label>
+  <select name="availability">
+    <option value="True">Есть</option>
+    <option value="False">Нет</option>
+  </select>
+
   <input type="submit" value="Добавить книгу">
 </form>
 
 
 <h1>Список Книг</h1>
-<table>  <thead>
-<tr>    <th>ID</th>
-  <th>Название</th>    <th>Издатель</th>
-  <th>Жанр</th>    <th>Наличие</th> </tr>
-</thead>  <tbody>
-<tr th:each="book : ${books}">    <td th:text="${book.idBook}"></td>
-  <td th:text="${book.name}"></td>
-  <td th:text="${book.publisher}"></td>
-  <td th:text="${book.genre}"></td>
-  <td th:text="${book.availability}"></td>
-</tr>
-</tbody></table>
-</body></html>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Название</th>
+    <th>Издатель</th>
+    <th>Жанр</th>
+    <th>Наличие</th>
+    <th>ID</th>
+    <th>Фио</th>
+    <th>Дата</th>
+    <th>Био</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="book : ${books}">
+    <td th:text="${book.idBook}"></td>
+    <td th:text="${book.name}"></td>
+    <td th:text="${book.publisher}"></td>
+    <td th:text="${book.genre}"></td>
+    <td th:text="${book.availability}"></td>
+  </tr>
+  </tbody>
+  <tbody>
+  <tr th:each="author : ${authors}">
+    <td th:text="${author.idAuthor}"></td>
+    <td th:text="${author.fullName}"></td>
+    <td th:text="${author.dateOfBirth}"></td>
+    <td th:text="${author.biography}"></td>
+  </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>
